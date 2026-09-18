@@ -1,4 +1,4 @@
-# Fitting Poisson  distribution
+# EX- 2 Fitting Poisson  distribution
 # NAME : AANKARSH
 # REG.NO: 212223233001
 # Aim : 
