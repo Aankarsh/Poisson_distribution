@@ -1,4 +1,6 @@
-# EX 2 Fitting Poisson  distribution
+# Fitting Poisson  distribution
+# NAME : AANKARSH
+# REG.NO: 212223233001
 # Aim : 
 
 To fit poisson distribution for the arrival of objects per minute from the feeder
@@ -30,11 +32,58 @@ The Poisson distribution is the discrete probability distribution of the number 
 
 # Program :
 
- importnumpyas np importmath importscipy.stats L=[int(i)fori ininput().split()] N=len(L); M=max(L) X=list();f=list() fori inrange(M+1): c =0 forj in range(N): if L[j]==i: c=c+1 f.append(c) X.append(i) sf=np.sum(f) p=list() fori inrange(M+1): p.append(f[i]/sf) mean=np.inner(X,p) p=list();E=list();xi=list() print("XP(X=x)Obs.FrExp.Frxi") print("--------------------------") forx inrange(M+1): p.append(math.exp(-mean)*mean**x/math.factorial(x)) E.append(p[x]*sf) xi.append((f[x]-E[x])**2/E[x]) print("%2.2f%2.3f%4.2f%3.2f%3.2f"%(x,p[x],f[x],E[x],xi[x])) print("--------------------------") cal_chi2_sq=np.sum(xi) print("Calculated value ofChisquareis%4.2f"%cal_chi2_sq) table_chi2=scipy.stats.chi2.ppf(1-.01,df=M) print("Tablevalueof chisquare at1 levelis%4.2f"%table_chi2) ifcal_chi2_sq<table_chi2: print("Thegivendatacanbe fitted inpoisson Distributionat 1%LOS") else: print("Thegivendatacannotbefittedin PoissonDistribution at1% LOS")
+DEVELOPED BY:PRANAV S
+
+REGISTER NO:212224040242
+```
+
+import numpy as np
+import math
+import scipy.stats
+L=[int(i) for i in input().split()]
+N=len(L)
+M=max(L) 
+X=[]
+f=[]
+for i in range (M+1):
+    c = 0
+    for j in range(N):
+        if L[j]==i:
+            c=c+1
+    f.append(c)
+    X.append(i)
+Sff=np.sum(f)
+p=[]
+for i in range(M+1):
+    p.append(f[i]/Sff) 
+mean=np.inner(X,p)
+p=[]
+E=[]
+xi=[]
+print("X P(X=x) Obs.Fr Exp.Fr xi")
+print("--------------------------")
+for x in range(M+1):
+    p.append(math.exp(-mean)*mean**x/math.factorial(x))
+    E.append(p[x]*Sff)
+    xi.append((f[x]-E[x])**2/E[x])
+    print("%2.2f %2.3f %4.2f %3.2f %3.2f"%(x,p[x],f[x],E[x],xi[x]))
+print("--------------------------")
+cal_chi2_sq=np.sum(xi)
+print(f"Calculated value of Chi square is {cal_chi2_sq:.2f}")
+table_chi2=scipy.stats.chi2.ppf(1-.01,df=M)
+print(f"Table value of chi square at 1 level is {table_chi2:.2f}")
+if cal_chi2_sq<table_chi2:
+    print("The given data can be fitted in poisson Distribution at 1% LOS")
+else:
+    print("The given data cannot be fitted in Poisson Distribution at 1% LOS")
+
+
+```
 
 # Output : 
 
-<img width="770" height="485" alt="image" src="https://github.com/user-attachments/assets/499e506d-f537-43d2-b01d-f29b9bc1af64" />
+<img width="952" height="232" alt="image" src="https://github.com/user-attachments/assets/b0bd0663-edf5-4c46-97c2-4616b02703c5" />
+
 
 
 # Results
